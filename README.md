@@ -43,26 +43,38 @@ _____________________________________________________________________
     return :
              boolean
      ________________________________________________________________________
+     
+     
      @RequestMapping(value = "/Patient" ,  method = RequestMethod.DELETE )
      parameters :   @RequestBody PatientUser user 
      return     :   String
     _________________________________________________________________________
+    
+    
     @RequestMapping(value = "/Patient",method = RequestMethod.PUT)
     parameters : @RequestBody MyPatient patient ,@RequestParam String token 
     return :  boolean
     _____________________________________________________________________
+    
+    
     @RequestMapping(value = "/Patient", method = RequestMethod.POST)
      paramerts :   @RequestBody PatientUser user, @RequestParam String token 
      return  :MyPatient
     ______________________________________________________________________
+    
+    
     @RequestMapping(value = "/Patients", method = RequestMethod.GET)
      paramters : @RequestParam String token 
      return : List<MyPatient>
   ______________________________________________________________________
+  
+  
   @RequestMapping(value = "/Exist/{userName}",method = RequestMethod.GET)
    parameters : @PathVariable(value = "userName") String userName)
    return : boolean 
   _____________________________________________________________________
+  
+  
   @RequestMapping(value = "/UploadImage" , method = RequestMethod.POST) // //new annotation since 4.3
      parameters : @RequestParam("file") MultipartFile file,@RequestParam String token
      return :             String
