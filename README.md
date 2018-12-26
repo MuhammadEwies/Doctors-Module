@@ -68,8 +68,21 @@ this will only will contain the app readme file for helping front-end developer
     return : boolean 
   
   
-    @RequestMapping(value = "/UploadImage" , method = RequestMethod.POST) // //new annotation since 4.3
+     @RequestMapping(value = "/UploadImage" , method = RequestMethod.POST) // //new annotation since 4.3
      parameters : @RequestParam("file") MultipartFile file,@RequestParam String token
      return :             String
   
-  
+     @RequestMapping(value = "/Appointments" , method = RequestMethod.GET)
+      parameters : @RequestParam String token
+      return:  List of json objects 
+      
+      
+      @RequestMapping(value = "/Appointment" , method = RequestMethod.POST)
+      parameters : @RequestParam String token , @RequestBody Appointment appointment)
+      return:  boolean 
+      
+      
+      @RequestMapping(value = "/Appointment" , method = RequestMethod.PUT)
+      parameters : @RequestParam String token , @RequestBody Appointment appointment)
+      return:  boolean 
+      
