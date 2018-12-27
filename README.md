@@ -85,4 +85,8 @@ this will only will contain the app readme file for helping front-end developer
       @RequestMapping(value = "/Appointment" , method = RequestMethod.PUT)
       parameters : @RequestParam String token , @RequestBody Appointment appointment)
       return:  boolean 
-      
+       
+      @RequestMapping(value = "/AppointmentsReport" , method = RequestMethod.GET)
+      parameters : @RequestParam String token
+      return: oject contains three interger values (Success , Fail , Pending ) 
+      will be represented in a circle in UI as a report of rate 
