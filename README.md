@@ -42,9 +42,9 @@ this will only will contain the app readme file for helping front-end developer
      
      
      
-     
+      // updated 27/4/2019
      @RequestMapping(value = "/Patient" ,  method = RequestMethod.DELETE )
-     parameters :   @RequestBody PatientUser user 
+     parameters :   @RequestParam int id ,  @RequestParam String token
      return     :   String
     
     @RequestMapping(value = "/Patient",method = RequestMethod.PUT)
@@ -69,7 +69,7 @@ this will only will contain the app readme file for helping front-end developer
   
   
      @RequestMapping(value = "/UploadImage" , method = RequestMethod.POST) // //new annotation since 4.3
-     parameters : @RequestParam("file") MultipartFile file,@RequestParam String token
+     parameters : @RequestParam("file") MultipartFile file,@RequestParam String token , @RequestParam int Patient_id
      return :             String
   
      @RequestMapping(value = "/Appointments" , method = RequestMethod.GET)
@@ -90,3 +90,7 @@ this will only will contain the app readme file for helping front-end developer
       parameters : @RequestParam String token
       return: oject contains three interger values (Success , Fail , Pending ) 
       will be represented in a circle in UI as a report of rate 
+      
+      @RequestMapping(value = "/Appointment" , method = RequestMethod.DELETE)
+       parameters :@RequestParam String token , @RequestBody Appointment appointment
+       return:boolean
