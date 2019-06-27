@@ -94,3 +94,7 @@ this will only will contain the app readme file for helping front-end developer
       @RequestMapping(value = "/Appointment" , method = RequestMethod.DELETE)
        parameters :@RequestParam String token , @RequestBody Appointment appointment
        return:boolean
+       @RequestMapping(value = "/PendingAppointments" , method = RequestMethod.GET)
+         parameters : @RequestParam String token )
+         return :  List<Appointment> 
+    
