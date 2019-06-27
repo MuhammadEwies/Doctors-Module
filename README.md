@@ -13,7 +13,16 @@ this will only will contain the app readme file for helping front-end developer
          parameters :            @RequestParam String token                       
          return : Doctor
 
-
+         // tested update at 27/6/2019 Ewies
+         @RequestMapping(value = "/DoctorProfilePic", method = RequestMethod.GET)
+          parameters : @RequestParam String token  )
+          return :PatientsImages
+          
+          @RequestMapping(value = "/DoctorProfilePic" , method = RequestMethod.PUT)
+             parameters :@RequestParam("file") MultipartFile file
+             return :@RequestParam String token
+             
+             
          @RequestMapping(value = "/IsAuthenticated", method = RequestMethod.POST)                        
           parameters :    @RequestHeader String token                                                         
           return : boolean                                                
