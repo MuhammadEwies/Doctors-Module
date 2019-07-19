@@ -72,10 +72,7 @@ this will only will contain the app readme file for helping front-end developer
      paramters : @RequestParam String token 
      return : List<MyPatient>
   
-    @RequestMapping(value = "/Exist/{userName}",method = RequestMethod.GET)
-    parameters : @PathVariable(value = "userName") String userName)
-    return : boolean 
-  
+   
   
      @RequestMapping(value = "/UploadImage" , method = RequestMethod.POST) // //new annotation since 4.3
      parameters : @RequestParam("file") MultipartFile file,@RequestParam String token , @RequestParam int Patient_id
@@ -106,4 +103,8 @@ this will only will contain the app readme file for helping front-end developer
        @RequestMapping(value = "/PendingAppointments" , method = RequestMethod.GET)
          parameters : @RequestParam String token )
          return :  List<Appointment> 
-    
+         
+       @RequestMapping(value = "/AppointmentToUser" , method = RequestMethod.POST)
+        parameters:@RequestParam String token , @RequestBody Appointment appointment
+        return:MyPatient
+        
