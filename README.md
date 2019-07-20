@@ -112,4 +112,8 @@ this will only will contain the app readme file for helping front-end developer
          parameters : @RequestParam String token ,String phone 
           // this string phone is and string of numbers can be in the phone of the patients
          return :List<MyPatient>
-        
+         
+         
+         @RequestMapping(value = "/PatientsAgesReport", method = RequestMethod.GET)
+           Parameter:  (@RequestParam String token
+           Return : Map<String,Integer>
