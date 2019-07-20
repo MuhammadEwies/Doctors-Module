@@ -104,7 +104,12 @@ this will only will contain the app readme file for helping front-end developer
          parameters : @RequestParam String token )
          return :  List<Appointment> 
          
-       @RequestMapping(value = "/AppointmentToUser" , method = RequestMethod.POST)
+        @RequestMapping(value = "/AppointmentToUser" , method = RequestMethod.POST)
         parameters:@RequestParam String token , @RequestBody Appointment appointment
         return:MyPatient
+     
+        @RequestMapping(value = "/SearchPatients", method = RequestMethod.GET)
+         parameters : @RequestParam String token ,String phone 
+          // this string phone is and string of numbers can be in the phone of the patients
+         return :List<MyPatient>
         
