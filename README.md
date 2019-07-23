@@ -19,8 +19,8 @@ this will only will contain the app readme file for helping front-end developer
           return :PatientsImages
           
           @RequestMapping(value = "/DoctorProfilePic" , method = RequestMethod.PUT)
-             parameters :@RequestParam("file") MultipartFile file
-             return :@RequestParam String token
+             parameters :@RequestParam("file") MultipartFile file , @RequestParam String token
+             return :String Link (link of the Image on the server)
              
              
              // Doctor Object Example 
@@ -112,11 +112,43 @@ this will only will contain the app readme file for helping front-end developer
      paramters : @RequestParam String token 
      return : List<MyPatient>
   
+                // Patient Object Example 
+                //json 
+                    {
+                    "doc_id": 2,
+                    "phone": "01126330970",
+                    "address": null,
+                    "id": 5,
+                    "myexaminations": [
+                      {
+                        "date": "sdfg",
+                        "id": 6,
+                        "description": "مرض مزمن ف الكبد ",
+                        "treatments": null
+                      }
+                    ],
+                    "images": [
+                      {
+                        "link": "asdfg",
+                        "uploadDate": null
+                      }
+                    ],
+                    "name": "محمد محمود جمعه ",
+                    "mail": "seifgamal@gmail.com",
+                    "age": 33
+                    }
+   
+   ///////////////////////////////////////////////////////////////////
    
   
      @RequestMapping(value = "/UploadImage" , method = RequestMethod.POST) // //new annotation since 4.3
      parameters : @RequestParam("file") MultipartFile file,@RequestParam String token , @RequestParam int Patient_id
-     return :             String
+     return :             String Link
+  
+  
+  
+  
+  
   
      @RequestMapping(value = "/Appointments" , method = RequestMethod.GET)
       parameters : @RequestParam String token
@@ -131,22 +163,49 @@ this will only will contain the app readme file for helping front-end developer
       @RequestMapping(value = "/Appointment" , method = RequestMethod.PUT)
       parameters : @RequestParam String token , @RequestBody Appointment appointment)
       return:  boolean 
-       
-      @RequestMapping(value = "/AppointmentsReport" , method = RequestMethod.GET)
-      parameters : @RequestParam String token
-      return: oject contains three interger values (Success , Fail , Pending ) 
-      will be represented in a circle in UI as a report of rate 
-      
+    
+    
       @RequestMapping(value = "/Appointment" , method = RequestMethod.DELETE)
        parameters :@RequestParam String token , @RequestBody Appointment appointment
        return:boolean
+       
+       
        @RequestMapping(value = "/PendingAppointments" , method = RequestMethod.GET)
          parameters : @RequestParam String token )
          return :  List<Appointment> 
          
+        
         @RequestMapping(value = "/AppointmentToUser" , method = RequestMethod.POST)
         parameters:@RequestParam String token , @RequestBody Appointment appointment
         return:MyPatient
+     
+     @RequestMapping(value = "/AppointmentsReport" , method = RequestMethod.GET)
+      parameters : @RequestParam String token
+      return: oject contains three interger values (Success , Fail , Pending ) 
+      will be represented in a circle in UI as a report of rate 
+     
+     
+     
+                 // Appointment Object Example 
+                //json 
+                       {
+                    "dateAndTime": "16/8/2019",
+                    "patientName": "Muhammad Ewies",
+                    "detail": null,
+                    "status": "pending",
+                    "disease_name": "sugger ziada",
+                    "id": 3,
+                    "phone": null
+                     }
+     
+     
+     
+     
+     
+     
+     
+     
+     
      
         @RequestMapping(value = "/SearchPatients", method = RequestMethod.GET)
          parameters : @RequestParam String token ,String phone 
