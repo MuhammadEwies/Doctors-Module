@@ -23,6 +23,46 @@ this will only will contain the app readme file for helping front-end developer
              return :@RequestParam String token
              
              
+             // Doctor Object Example 
+             //json 
+                                     {
+                          "profilepicture": null,
+                          "location": {
+                            "lat": "15ll",
+                            "lon": "sdfg"
+                          },
+                          "socialMedia": {
+                            "facebook": "jkjgfdsasdfghjknm, bvcfdstyhjbnvfgh",
+                            "twitter": null,
+                            "whatsapp": null,
+                            "linkedin": null,
+                            "youtube": null
+                          },
+                          "name": "mohamed",
+                          "department": null,
+                          "city": null,
+                          "bio": null,
+                          "image": null,
+                          "address": null,
+                          "id": 2,
+                          "mail": null,
+                          "second_phone": null,
+                          "open_dates": null,
+                          "first_phone": null
+                        }
+             /////////////////////////////////////////////////
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
          @RequestMapping(value = "/IsAuthenticated", method = RequestMethod.POST)                        
           parameters :    @RequestHeader String token                                                         
           return : boolean                                                
